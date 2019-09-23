@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
+// initilize multer for storage
 let storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, './uploads')
